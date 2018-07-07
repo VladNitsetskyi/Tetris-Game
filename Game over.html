@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+ 
+      
+</head>
+
+<body>
+<script>
+/*    const scoreTable = {
+      highest: [0, 0, 0],
+      updateEnd: function(currentScore){
+        for(let i = 0; i < this.highest.length; i++){
+          if(currentScore > this.highest[i]){
+            this.highest[i] = currentScore;
+            i = 4;
+            let save =  JSON.stringify(this.highest);
+          }
+        }
+      },
+      displayScore: function(){
+        let places = document.getElementById('score').childNodes;
+        for(let i = 0; i < places.length; i++){
+          places[i].innerText = (i+1) + ". " + this.highest[i];
+        }
+      },
+      updateStart: function(){
+
+      }
+    }
+*/
+
+let highest = [480 , 320, 110];
+let save = JSON.stringify(highest);
+console.log(save);
+
+let xhr = new XMLHttpRequest;
+xhr.open('PUT','https://jsonblob.com/api/jsonBlob/62fcdc92-600d-11e8-823e-45853e38ce15', true);
+xhr.setRequestHeader("Content-type", "application/json");
+xhr.send( save );
+if (xhr.readyState == 4)
+  if (xhr.status == 200){
+    console.log( xhr.responseText );
+    } 
+
+
+let xhr2 = new XMLHttpRequest;
+xhr2.open('GET', 'https://jsonblob.com/api/jsonBlob/62fcdc92-600d-11e8-823e-45853e38ce15', false);
+xhr2.send();
+
+if (xhr2.status != 200) {
+  console.log( xhr2.status + ': ' + xhr2.statusText ); 
+} else {
+   console.log(JSON.parse(xhr2.responseText) );
+}
+</script>
+
+
+</body>
+
+</html>
