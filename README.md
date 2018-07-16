@@ -1,5 +1,5 @@
 # Tetris-Game
-Tetris Game
+
 
 Tetris Game Follow this link to check my game online - https://vladnitsetskyi.github.io/Tetris-Game/js_practice.html
 
